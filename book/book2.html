@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">
+		<title>MAGAZINE</title>
+		<link rel="shortcut icon" type="image/x-icon" href="../favicon.ico" />
+		<link rel="stylesheet" type="text/css" href="./css/book.css">
+		<script type="text/javascript" src="../js/jquery-1.12.1.min.js"></script>	
+		<script type="text/javascript" src="./js/book.js"></script>
+	</head>
+	<body>
+		<?
+			include("./include/header.html");
+		?>
+
+		<div id="content" class="clearfix book2">
+			<div id="book" class="bg">
+				<div class="magazine">
+					<div class="ho">454호 <span>|</span> 2017.10.30 <span>|</span>  조금 더 특별한 스포츠 이야기</div>
+					<h2 class="txt">magazine<span>S</span></h2>
+				</div>
+				<div class="cover">
+					<h3 class="txt_2">COVER STORY</h3>
+					<div class="title">최고라고 믿었기에 우린최강이다</div>
+					<div class="desc">오버워치 월드컵 2연패 도전, 한국팀 근기있는 자신감</div>
+					<div class="writer">글 <span>|</span> ○○○기자<br> 사진 <span>|</span> ○○○ </div>
+				</div>
+			</div><!--"book" -->
+			<div id="side">
+				<div class="inner">
+					<div class="news">
+						<h3 class="txt">PEOPLE</h3>
+								<div class="news_list clearfix ">
+									<div class="news_photo"><img src="./img/news_photo.jpg" alt=""></div>
+									<div class="news_head"><strong>"치로 임모빌레,<br>너의 능력을 보여줘" ></strong></div>
+								</div>
+					</div><!--"news"  -->			
+						<div class="news">
+							<h3 class="txt">SPECIAL REPORT<span></span></h3>
+								<ul class="news_list one clearfix ">
+									<li>
+										<div class="news_title">박문성</div>
+										<div class="news_desc">기록으로 입증된 펩 축구의 폭발력></div>
+									</li>									
+									<li>
+										<div class="news_title">배걸리 휴스턴</div>
+										<div class="news_desc">그토록 뜨거웠던 WS 첫승리 의미></div>
+									</li>
+								</ul>
+						</div><!--"news"  -->
+						<div class="news">
+							<h3 class="txt">COLUMN<span></span></h3>
+								<ul class="news_list clearfix ">
+									<li>
+										<div class="news_title">中요한 기자들</div>
+										<div class="news_desc">中, 21년만에 FIFA랭킹 韓추월...어떤 의미일까</div>
+									</li>																
+									<li>
+										<div class="news_title">열혈기자 욤용근의 오늘의 NBA</div>
+										<div class="news_desc">디트로이드, 서부컨퍼런스원정 정복자</div>
+									</li>																	
+									<li>
+										<div class="news_title">이영미 人터뷰</div>
+										<div class="news_desc">꾸준함의 대명사, 코리의 형카일시거</div>
+									</li>
+								</ul>
+						</div><!--"news"  -->
+						<?
+							include("./include/zoomin.html");
+						?>
+						<div class="news">
+							<h3 class="txt">POLL<span></span></h3>
+								<ul class="news_list clearfix ">
+									<li>
+										<div class="news_desc">LOL에서 가장 중요하다고 생각되는 지표는?></div>
+									</li>
+								</ul>
+						</div><!--"news"  -->
+				</div><!--"inner"  -->
+			</div><!--"side"  -->
+		</div><!-- "content"  -->
+		<?
+			include("./include/footer.html");
+		?>
+
+	</body>
+</html>

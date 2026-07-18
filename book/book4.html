@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">
+		<title>MAGAZINE</title>
+		<link rel="shortcut icon" type="image/x-icon" href="../favicon.ico" />
+		<link rel="stylesheet" type="text/css" href="./css/book.css">
+		<script type="text/javascript" src="../js/jquery-1.12.1.min.js"></script>
+		<script type="text/javascript" src="./js/book.js"></script>
+	</head>
+	<body>
+		<?
+			include("./include/header.html");
+		?>
+
+		<div id="content" class="clearfix book4">
+			<div id="book" class="bg">
+				<div class="magazine">
+					<div class="ho">453호 <span>|</span> 2017.09.30 <span>|</span>  조금 더 특별한 스포츠 이야기</div>
+					<h2 class="txt">magazine<span>S</span></h2>
+				</div>
+				<div class="cover">
+					<h3 class="txt_2">COVER STORY</h3>
+					<div class="title">크리스프룸, 새 시대를 연 두바뀌의 영웅</div>
+					<div class="desc">그랜드 투어 석권을 꿈꾸는 크리스 프룸 인터뷰</div>
+					<div class="writer">글 <span>|</span> ○○○기자<br> 사진 <span>|</span> ○○○ </div>
+				</div>
+			</div><!--"book" -->
+			<div id="side">
+				<div class="inner">
+					<div class="news">
+						<h3 class="txt">PEOPLE</h3>
+								<div class="news_list clearfix ">
+									<div class="news_photo"><img src="./img/news_photo.jpg" alt=""></div>
+									<div class="news_head"><strong>추신수, 1루수와<BR> 타격폼 변화를위해 ></strong></div>
+								</div>
+					</div><!--"news"  -->			
+						<div class="news">
+							<h3 class="txt">SPECIAL REPORT<span></span></h3>
+								<ul class="news_list one clearfix ">
+									<li>
+										<div class="news_title">박문성 </div>
+										<div class="news_desc">이야기 부족한 축구 ></div>
+									</li>									
+									<li>
+										<div class="news_title">서형욱</div>
+										<div class="news_desc">10월의 FIFA랭킹, 중국보다 아픈 무능 ></div>
+									</li>
+								</ul>
+						</div><!--"news"  -->
+						<div class="news">
+							<h3 class="txt">COLUMN<span></span></h3>
+								<ul class="news_list clearfix ">
+									<li>
+										<div class="news_title">슈퍼리그 칼럼</div>
+										<div class="news_desc">명자 리피가 코치 9명과 함께하는 이유 ></div>
+									</li>																
+									<li>
+										<div class="news_title">키무라의 야큐 리포트</div>
+										<div class="news_desc">1년에 한번 ... NPB PS가 주목하는 '디테일' ></div>
+									</li>																	
+									<li>
+										<div class="news_title">이영미의 스포츠人 스토리</div>
+										<div class="news_desc">코리 한과 애리조나 구단이 만든 가치 ></div>
+									</li>
+								</ul>
+						</div><!--"news"  -->
+						<?
+							include("./include/zoomin.html");
+						?>
+						<div class="news">
+							<h3 class="txt">POLL<span></span></h3>
+								<ul class="news_list clearfix ">
+									<li>
+										<div class="news_desc">클리블랜드 또다시 NBA 파이널 진출 가능할까?></div>
+									</li>
+								</ul>
+						</div><!--"news"  -->
+				</div><!--"inner"  -->
+			</div><!--"side"  -->
+		</div><!-- "content"  -->
+		<?
+			include("./include/footer.html");
+		?>
+
+	</body>
+</html>

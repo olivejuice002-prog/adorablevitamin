@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="ko">
+	<head>
+		<meta name="viewport" content="width=device-width">
+		<meta charset="utf-8">
+		<title>OLIVE JUICE HOMEPAGE</title>
+		<link rel="stylesheet" href="/css/uikit.min.css">
+		<link rel="stylesheet" href="/css/default.css">
+		<link rel="stylesheet" href="http://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+		<link rel="stylesheet" type="text/css" href="/css/main.css">
+		<script src="/js/jquery-1.12.1.min.js"></script>
+		<script src="/js/main.js"></script>
+		<script src="/js/uikit.min.js"></script>
+
+				
+		<!--[if lt IE 9]>
+			<script src="/js/html5shiv.js"></script>
+		<![endif]-->
+
+	</head>
+
+	<body>
+		<?
+			include("../include/header.html");
+		?>
+
+		<?
+			include("../include/subHead.html");
+		?>
+
+		<section id="sub">
+			<div class="contact">
+				<div class="wrap">
+					<h1>문의<span>메일로 남겨주시면 <br class="br_block"> 최대한 빠르게 답변드리겠습니다.</span></h1>
+					
+					<form name="fwrite" id="fwrite" action="/bbs/write_update.php" onsubmit="return fwrite_submit(this);" method="post" enctype="multipart/form-data">
+						<table>
+							<tr>
+								<td><input class="uk-input" type="text" name="wr_name" id="wr_name" placeholder="고객명"></td>
+							</tr>
+							<tr>
+								<td><input class="uk-input" type="text" name="wr_2" id="wr_3" placeholder="이메일"></td>
+							</tr>
+							<tr>
+								<td><input class="uk-input" type="text" name="wr_1" id="wr_1"  placeholder="예) 010-1234-1234"></td>
+							</tr>
+							<tr>
+								<td>
+								 <select class="uk-select" name="wr_subject" id="wr_subject" >
+									<option value="">사업부서 선택</option>
+									<option value="유리제품">유리제품</option>
+									<option value="판촉홍보물">판촉홍보물</option>
+									<option value="판촉포장">판촉포장</option>
+									<option value="인재파견">인재파견</option>
+								</select>
+								</td>
+							</tr>
+							<tr>
+								 <td>
+								<textarea class="uk-textarea" name="wr_content" id="wr_content" rows="5" placeholder="문의내용을 입력해주세요."></textarea>
+								 
+								 </td>
+							</tr>
+						</table>
+								
+						<button type="submit" name="send" value="send">전송하기</button>	 
+					</form>
+				</div>
+		</div><!-- contact-->	
+		</section>
+<script type="text/javascript">
+  	function fwrite_submit(){
+      if($("#wr_subject").val() == ""){
+        alert('사업부서를 선택해주세요.');
+        return false;
+      }
+      if($("#wr_contnet").val() == ""){
+        alert('내용을 필히 입력해주세요.');
+        return false;
+      }
+    }
+</script>
+		<?
+			include("../include/footer.html");
+		?>
+
+	</body>
+
+</html>

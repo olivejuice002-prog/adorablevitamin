@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">
+		<title>MAGAZINE</title>
+		<link rel="shortcut icon" type="image/x-icon" href="../favicon.ico" />
+		<link rel="stylesheet" type="text/css" href="./css/book.css">
+		<script type="text/javascript" src="../js/jquery-1.12.1.min.js"></script>
+		<script type="text/javascript" src="./js/book.js"></script>
+	</head>
+	<body>
+		<?
+			include("./include/header.html");
+		?>
+
+		<div id="content" class="clearfix book3">
+			<div id="book" class="bg">
+				<div class="magazine">
+					<div class="ho">453호 <span>|</span> 2017.09.30 <span>|</span>  조금 더 특별한 스포츠 이야기</div>
+					<h2 class="txt">magazine<span>S</span></h2>
+				</div>
+				<div class="cover">
+					<h3 class="txt_2">COVER STORY</h3>
+					<div class="title">평창올림픽, 꺼지지 않는 불꽃</div>
+					<div class="desc">가장 완벽한 성화봉을 위해 열정을 담아낸 사람들</div>
+					<div class="writer">글 <span>|</span> ○○○기자<br> 사진 <span>|</span> ○○○ </div>
+				</div>
+			</div><!--"book" -->
+			<div id="side">
+				<div class="inner">
+					<div class="news">
+						<h3 class="txt">PEOPLE</h3>
+								<div class="news_list clearfix ">
+									<div class="news_photo"><img src="./img/news_photo.jpg" alt=""></div>
+									<div class="news_head"><strong>민경호 "투르드 프랑스를 꿈꾼다"></strong></div>
+								</div>
+					</div><!--"news"  -->			
+						<div class="news">
+							<h3 class="txt">SPECIAL REPORT<span></span></h3>
+								<ul class="news_list one clearfix ">
+									<li>
+										<div class="news_title">손대범</div>
+										<div class="news_desc">결정된 순위, 각 구단에 필요한 자원은? ></div>
+									</li>									
+									<li>
+										<div class="news_title">서형욱</div>
+										<div class="news_desc">'4년숙성' 황현수는 자신만만하다 ></div>
+									</li>
+								</ul>
+						</div><!--"news"  -->
+						<div class="news">
+							<h3 class="txt">COLUMN<span></span></h3>
+								<ul class="news_list clearfix ">
+									<li>
+										<div class="news_title">한준의 티키타카</div>
+										<div class="news_desc">한국 유럽파 ...TOP10리그 지형도 ></div>
+									</li>																
+									<li>
+										<div class="news_title">알베르토의 칼치오탈리아</div>
+										<div class="news_desc">피오렌티나 매력의 비결 ></div>
+									</li>																	
+									<li>
+										<div class="news_title">박문성으 풋볼리즘</div>
+										<div class="news_desc">충분히 더 논쟁적이어도 된다 ></div>
+									</li>
+								</ul>
+						</div><!--"news"  -->
+						<?
+							include("./include/zoomin.html");
+						?>
+						<div class="news">
+							<h3 class="txt">POLL<span></span></h3>
+								<ul class="news_list clearfix">
+									<li>
+										<div class="news_desc">롤드컵4강 SKT VS RNG 승리팀은 어디?></div>
+									</li>
+								</ul>
+						</div><!--"news"  -->
+				</div><!--"inner"  -->
+			</div><!--"side"  -->
+		</div><!-- "content"  -->
+		<?
+			include("./include/footer.html");
+		?>
+
+	</body>
+</html>

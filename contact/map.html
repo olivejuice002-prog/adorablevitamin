@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ko">
+	<head>
+		<meta name="viewport" content="width=device-width">
+		<meta charset="utf-8">
+		<title>OLIVE JUICE HOMEPAGE</title>
+		<link rel="stylesheet" href="/css/uikit.min.css">
+		<link rel="stylesheet" href="/css/default.css">
+		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+		<link rel="stylesheet" href="http://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+		<link rel="stylesheet" type="text/css" href="/css/main.css">
+		<script src="/js/jquery-1.12.1.min.js"></script>
+		<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+		<script src="/js/main.js"></script>
+		<script src="/js/uikit.min.js"></script>
+
+				
+		<!--[if lt IE 9]>
+			<script src="/js/html5shiv.js"></script>
+		<![endif]-->
+
+	</head>
+	
+	<body>
+
+		<?
+			include("../include/header.html");
+		?>
+
+		<?
+			include("../include/subHead.html");
+		?>
+
+		<section id="sub">
+			<div class="map">
+				<div class="adress">
+					<div class="adress_img">
+										<!-- * 카카오맵 - 지도퍼가기 -->
+						<!-- 1. 지도 노드 -->
+						<div id="daumRoughmapContainer1598866019254" class="root_daum_roughmap root_daum_roughmap_landing"></div>
+
+						<!--
+						2. 설치 스크립트
+						* 지도 퍼가기 서비스를 2개 이상 넣을 경우, 설치 스크립트는 하나만 삽입합니다.
+						-->
+						<script charset="UTF-8" class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
+
+						<!-- 3. 실행 스크립트 -->
+						<script charset="UTF-8">
+						new daum.roughmap.Lander({
+						"timestamp" : "1598866019254",
+						"key" : "2zu23",
+						"mapWidth" : "1920",
+						"mapHeight" : "520"
+						}).render();
+						</script>
+					</div>
+					<ul class="adress_txt">
+						<h3>OLIIVE JUICE <span>Location.</span><h3>
+						<li>주소<br>충북 청주시흥덕구 풍산로 127번길 44</li>
+						<li>문의시간<br>AM 09:00 ~ PM 18:00</li>
+						<li>Tel<br> 010 3471 9936</li>
+						<li>토,일.공휴일 휴무</li>				
+					</ul>
+				</div>
+			</div>
+
+		</section>
+
+		<?
+			include("../include/footer.html");
+		?>
+
+	</body>
+
+</html>
