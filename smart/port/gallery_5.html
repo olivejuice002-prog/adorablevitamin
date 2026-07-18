@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>제목</title>
+		
+		<style>
+		/*<!doctype html>을 나중에 주었을경우 해결하기 style만들고 */
+			html, body {width:100%;height:100%;}/*body를 기준으로 다시한번 감싸주고body를 감싸는 html 다시감싸줘야함 */
+			iframe, img {vertical-align:top;}/*이미지 뒤에 한칸뛰어쓰기포함되어있는것을 올려주는 기능*/
+			
+		</style>
+	</head>
+	<body>
+	<table border="0" width="100%" height="100%" cellpadding="0" cellspacing="0">
+		<tr>
+			<td align="center">
+				<table border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td width="12" height="12" background="./img/bg1.jpg"></td>
+						<td width="*" background="./img/bg2.jpg"></td>
+						<td width="12" background="./img/bg3.jpg"></td>
+					</tr>
+					<tr>
+						<td height="*" background="./img/bg4.jpg"></td>
+						<td background="./img/bg5.jpg">
+					<table border="0" cellpadding="0" cellspacing="0">
+						<tr>
+							<td>		
+								<table border="0" width="524" cellpadding="0" cellspacing="0">
+									<tr>
+										<!-- main -->
+										<td rowspan="7" width="420"><iframe src="./a1.html" width="420" height="264" marginwidth="0" frameborder="0" scrolling="no" name="top"></iframe></td>
+										<td rowspan="7" width="4"></td>
+										<td width="100" height="63"><a href="./a1.html" target="top"><img src="./img/a1.jpg" width="100" height="63"></a></td>
+									</tr>
+									<tr>
+										<td height="4"></td>	
+									</tr>
+									<tr>
+										<td height="63"><a href="./a2.html" target="top"><img src="./img/a2.jpg" width="100" height="63"></a></td>	
+									</tr>
+									<tr>
+										<td height="4"></td>	
+									</tr>
+									<tr>
+										<td height="63"><a href="./a3.html" target="top"><img src="./img/a3.jpg" width="100" height="63"></a></td>	
+									</tr>
+									<tr>
+										<td height="4"></td>
+									</tr>
+									<tr>
+										<td height="63"><a href="./a4.html" target="top"><img src="./img/a4.jpg" width="100" height="63"></a></td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+					</table>
+				</td>
+				<td background="./img/bg6.jpg"></td>
+			</tr>
+				<tr>
+					<td height="12" background="./img/bg7.jpg"></td>
+					<td background="./img/bg8.jpg"></td>
+					<td background="./img/bg9.jpg"></td>
+				</tr>
+			</table>
+			</td>
+		</tr>
+	</table>
+
+		
+	
+	</body>
+</html>
+

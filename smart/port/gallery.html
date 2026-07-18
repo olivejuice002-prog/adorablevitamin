@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">
+		<title>gallery</title>
+		<link rel="stylesheet" type="text/css" href="./gallery.css">
+		<script type="text/javascript" src="../js/jquery-1.12.1.min.js"></script>
+		<script type="text/javascript" src="./gallery.js" ></script>
+
+	</head>
+
+	<body>
+	<div id="home">
+		<div class="banner">THiNK TOGETHER FOR CREATIVE DESIGN!</div>
+		<div class="h" onMouseOver="document.getElementById('home').style.top='0px'"><a href="/">HOME</a></div>
+	</div>
+
+	<!-- gallery01 -->
+		<div class="g1">
+			<div class="inner clearfix">
+				<ul>
+					<li><img src="./img/g01.jpg"><span>HTML</span></li>
+					<li><img src="./img/g02.jpg"><span>CSS</span></li>
+					<li><img src="./img/g03.jpg"><span>JAVASCRIOT</span></li>
+					<li><img src="./img/g04.jpg"><span>DOM</span></li>
+					<li><img src="./img/g05.jpg"><span>JQuery</span></li>
+					<li><img src="./img/g06.jpg"><span>MediaQuery</span></li>
+				</ul>
+			</div>
+		</div>
+    <!-- gallery02 -->                        
+		<div class="g2 clearfix">
+			<ul>
+				<li><img src="./img/g01.jpg"><span>HTML</span></li>
+				<li><img src="./img/g02.jpg"><span>CSS</span></li>
+				<li><img src="./img/g03.jpg"><span>JAVASCRIOT</span></li>
+				<li><img src="./img/g04.jpg"><span>DOM</span></li>
+				<li><img src="./img/g05.jpg"><span>JQuery</span></li>
+			</ul>
+		</div>	
+		
+    <!-- gallery03 -->
+		<div class="g3 clearfix">
+			<ul>
+				<li><img src="./img/g01.jpg"><span>HTML</span></li>
+				<li><img src="./img/g02.jpg"><span>CSS</span></li>
+				<li><img src="./img/g03.jpg"><span>JAVASCRIOT</span></li>
+				<li><img src="./img/g04.jpg"><span>DOM</span></li>
+				<li><img src="./img/g05.jpg"><span>JQuery</span></li>
+			</ul>
+		</div>	
+
+
+	<!-- gallery04 -->
+		<div class="g4 clearfix">
+			<ul>
+				<li><img src="./img/g01.jpg"><span>HTML</span></li>
+				<li><img src="./img/g02.jpg"><span>CSS</span></li>
+				<li><img src="./img/g03.jpg"><span>JAVASCRIOT</span></li>
+				<li><img src="./img/g04.jpg"><span>DOM</span></li>
+				<li><img src="./img/g05.jpg"><span>JQuery</span></li>
+			</ul>
+		</div>
+
+<!--  java 라인스타일로 한것
+		<div class="g5">
+			<div class="inner clearfix">
+			<div class="wrap">
+				<div class="main"><img src="./img/g01.jpg" id="movie"></div>
+				<div class="title">GALLERY</div>
+			</div>
+				<ul>
+					<li onMouseOver="document.getElementById('movie').src='./img/g01.jpg'"><img src="./img/g01.jpg"></li>
+					<li onMouseOver="document.getElementById('movie').src='./img/g02.jpg'"><img src="./img/g02.jpg"></li>
+					<li onMouseOver="document.getElementById('movie').src='./img/g03.jpg'"><img src="./img/g03.jpg"></li>
+					<li onMouseOver="document.getElementById('movie').src='./img/g04.jpg'"><img src="./img/g04.jpg"></li>
+					<li onMouseOver="document.getElementById('movie').src='./img/g05.jpg'"><img src="./img/g05.jpg"></li>
+					<li onMouseOver="document.getElementById('movie').src='./img/g06.jpg'"><img src="./img/g06.jpg"></li>
+
+				</ul>
+			</div>
+		</div>-->
+
+<!-- gallery05/java01 -->		
+<!--java로 풀어서 보따리로 묶어서 한것   -->
+<style>
+.g5{width:340px;margin:0 auto;}
+.g5 .inner{border:1px solid #777;padding:12px;}
+.g5 .wrap{position:relative;}
+.g5 .main{height:170px;overflow:hidden;}
+.g5 .title{position:absolute;left:0px;bottom:0px;background:rgba(0,0 ,0, 0.7);width:100%;height:35px;line-height:35px;text-align:center;color:#FFF;font-weight:500;font-size:20px;} 
+.g5 img{width:100%;}
+.g5 ul{position:relative;}
+.g5 li{width:104px;height:56px;overflow:hidden;float:left;margin:1px 0 0 1px;}
+.g5 li span{position:absolute;left:0px;top:0px;border:3px solid #F00;width:98px;height:50px;/*display:none*/;}
+/*.g5 li span{left:104px;top:0px;}*/
+/*.g5 li:hover span{display:block;}*/
+/*.g5 li:first-child span{display:block;}*/
+.g5 li:nth-child(3n-2){margin:1px 0 0 0;}
+</style>
+
+<script>
+$(function(){
+	$('.g5 li').on('mouseover',function() {
+		var mImg=$(this).find('img').attr('src');
+		$('.g5 .main img').attr('src', mImg);
+		
+		var mText=$(this).find('img').attr('alt');
+		$('.g5 .title').text(mText);
+
+
+		var mPos=$(this).position();
+		/*alert(mPos.left);*/
+		$('.g5 li span').stop(true).animate({'left':mPos.left+1,'top':mPos.top+1});
+				
+	});
+
+});
+</script>
+
+		<div class="g5">
+			<div class="inner clearfix">
+				<div class="wrap">
+					<div class="main"><img src="./img/g01.jpg" id="movie" alt=""></div>
+					<div class="title">GALLERY</div>
+				</div>
+				<ul>
+					<li><img src="./img/g01.jpg" alt="HTML"><span></span></li>
+					<li><img src="./img/g02.jpg" alt="CSS"><span></span></li>
+					<li><img src="./img/g03.jpg" alt="JAVASCRIPT"><span></span></li>
+					<li><img src="./img/g04.jpg" alt="DOM"><span></span></li>
+					<li><img src="./img/g05.jpg" alt="jQuary"><span></span></li>
+					<li><img src="./img/g06.jpg" alt="MediaQuary"><span></span></li>
+				</ul>
+			</div>
+		</div>
+	
+
+<!-- gallery06/java02 -->
+		<div class="g6">
+			<div class="inner">
+				<div class="main"><img src="./img/g01.jpg" id="movie2"></div>
+					<div class="arrow prev" onClick="backward()">이전</div>
+					<div class="arrow next" onClick="forward()">다음</div>
+			</div>
+		</div>
+
+		
+<!-- gallery07 -->
+		<div class="g7"> 
+			<div class="wrap">
+				<ul class="clearfix" id="pList" >
+					<li><img src="./img/g01.jpg"><span>하나</span></li>
+					<li><img src="./img/g02.jpg"><span>둘</span></li>
+					<li><img src="./img/g03.jpg"><span>둘</span></li>
+					<li><img src="./img/g04.jpg"><span>넷</span></li>
+					<li><img src="./img/g05.jpg"><span>다섯</span></li>
+					<li><img src="./img/g06.jpg"><span>여섯</span></li>
+					<li><img src="./img/g07.jpg"><span>일곱</span></li>
+					<li><img src="./img/g08.jpg"><span>여덟</span></li>
+					<li><img src="./img/g09.jpg"><span>아홉</span></li>
+					<li><img src="./img/g10.jpg"><span>열</span></li>
+				</ul>
+			</div><!-- wrap -->
+			<div class="arrow prev" onClick="pNext()"></div>
+			<div class="arrow next" onClick="pPrev()"></div>
+		</div><!--"g7"  -->
+
+
+	</body>
+</html>

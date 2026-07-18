@@ -1,0 +1,104 @@
+@charset "utf-8";
+
+body {margin:0;padding:0;font-size:13px;color:#555;font-family:Malgun Gothic, '맑은 고딕', 'MGothic','돋움',dotum,verdana,arial,sans-serif;background:#eeeeee;}
+h1,h2,h3,h4,h5,h6,p {margin:0;padding:0;}
+ul,ol {list-style:none;margin:0;padding:0;}
+img	{vertical-align:middle;border:0 none;}
+a {text-decoration:none;color:#000;font-size:13px;}
+input, button {margin:0;padding:0;vertical-align:top;}
+
+/* Clearfix */
+.clearfix:before, .clearfix:after {content:"";display: block;}
+.clearfix:after {clear: both;}
+
+/*menu*/
+#home{position:fixed;left:0px;top:-51px;z-index:1;width:100%;}
+#home .banner{background:#222;color:#FFF;font-size:20px;letter-spacing:3px;text-align:center;line-height:50px;border-bottom:2px solid #000;}
+#home .h{background:#222;width:100px;text-align:center;margin:0 auto;line-height:20px;border-radius:0px 0px 10px 10px;}
+#home .h a{color:#FFF;display:block;}
+
+/*gallery01*/
+.g1 {background:#DDD;width:329px;margin:40px auto;}
+.inner{border:1px solid #777;padding:12px;}/*.g1에 보더를 주면 사이즈가 선값에 따라 바꿔줘야함 div 만들고 여기에 주면됨*/
+.g1 li {width:100px;height:100px;overflow:hidden;float:left;margin:0 1px 1px 0;position:relative;}
+.g1 img {width:100%;transition:0.3s;}/* 확대후 사이즈 중앙에서 확대하는걸로 margin:-10% 0 0 -10%;*/
+.g1 li:first-child {width:201px;height:201px;}
+.g1 li:hover img{width:120%;margin:-10% 0 0 -10%;} 
+.g1 li span{position:absolute;left:0px;bottom:0px;width:100%;background:linear-gradient(0deg,rgba(0,0,0,0.6),rgba(0,0,0,0));line-height:50px;color:#FFF;text-align:center;}
+/*인라인요소는 width값 안먹히나 띄어놓고는먹힘/배경만 투명 background:rgba(0,0,0,0.7);글씨와 배경모두 반투명 opacity:0.5;*/
+
+/*gallery02*/
+.g2 {background:#DDD;width:664px;margin:0px auto;}
+.g2 li {width:158px;height:116px;overflow:hidden;float:left;margin:0 1px 1px 0;position:relative;}
+.g2 li img {width:100%;}
+.g2 li:first-child {width:345px;height:233px;}
+.g2 li span {position:absolute;left:0px;top:0px;color:#FFF;background:rgba(0,0,0,0.7);width:100%;height:100%;
+line-height:116px;text-align:center;display:none;}
+.g2 li:first-child span{line-height:233px;}
+.g2 li:hover span {display:block;}
+
+/*gallery03*/
+.g3 {background:#DDD;width:830px;margin:20px auto;}
+.g3 li {width:150px;height:150px;overflow:hidden;float:left;margin:0 10px 0 10px;position:relative;}
+.g3 li:first-child{margin-left:0px;}
+.g3 li:last-child{margin-right:0px;}
+.g3 li img {width:100%;}
+.g3 li span {position:absolute;left:0px;bottom:0px;color:#FFF;background:rgba(0,0,0,0.7);width:100%;height:0%;
+text-align:center;transition:0.5s;}/*display:none;display:block;쓰면 transition:0.3s;이 안먹힘*/
+								   /*opacity:0;transition:0.5s;opacity:1;첫번째방법*/
+.g3 li:hover span {height:50%;}    /*height:0%;transition:0.5s;height:50%; 두번째방법*/
+
+
+/*gallery04*/
+.g4 {background:#DDD;width:950px;margin:20px auto;}
+.g4 li {width:150px;height:150px;overflow:hidden;float:left;margin:0 10px 0 10px;position:relative;border:10px solid #BBB;border-radius:85px;}
+.g4 li img {width:100%;}
+.g4 li span {position:absolute;left:0px;bottom:0px;color:#FFF;background:rgba(0,0,0,0.7);width:100%;height:0%;
+text-align:center;transition:0.5s;}/*display:none;display:block;쓰면 transition:0.3s;이 안먹힘/transition은수치값만 먹힘*/
+								   /*opacity:0;transition:0.5s;opacity:1;첫번째방법*/
+.g4 li:hover span {height:50%;}    /*height:0%;transition:0.5s;height:50%; 두번째방법*/
+
+
+
+/*gallery05*/
+/*
+.g5{width:340px;margin:0 auto;}
+.g5 .inner{border:1px solid #777;padding:12px;}안쪽padding이나 border가 있으면 inner를 만들어서 씀
+.g5 .wrap{position:relative;}
+.g5 .main{height:170px;overflow:hidden;}
+.g5 .title{position:absolute;left:0px;bottom:0px;background:rgba(0,0 ,0, 0.7);width:100%;height:35px;line-height:35px;text-align:center;color:#FFF;font-weight:500;font-size:20px;} 
+.g5 img{width:100%;}
+.g5 li{width:104px;height:56px;overflow:hidden;float:left;margin:1px 0 0 1px;position:relative;}
+.g5 li span{position:absolute;left:0px;top:0px;border:3px solid #F00;width:98px;height:50px;display:none;}
+.g5 li:hover span{display:block;}
+.g5 li:nth-child(3n-2){margin:1px 0 0 0;}첫번째와 네번째 마진빼기위해
+*/
+
+
+
+
+/*gallery06*/
+.g6{width:340px;margin:20px auto; position:relative;}
+.g6 .inner{padding:12px;border:1px solid #777;}
+.g6 .main{height:240px;overflow:hidden;}
+.g6 .main img{width:100%;}
+.g6 .prev{background:url(./img/arrow.png) no-repeat;width:42px;height:84px;position:absolute;left:-72px;top:92px;text-indent:-40px;overflow:hidden;}
+.g6 .arrow{background:url(./img/arrow.png) no-repeat;width:42px;height:84px;position:absolute;top:92px;text-indent:-40px;overflow:hidden;}
+.g6 .prev{left:-72px;}
+.g6 .next{background-position:-42px 0px;right:-72px;}
+/*.g6 .next{background: url(./img/arrow.png) no-repeat -42px 0px;width:42px;height:84px;position:absolute;right:-72px;top:92px;text-indent:-200px;overflow:hidden;}*/
+
+/*gallery07*/
+.g7 {background:#DDD;width:950px;margin:20px auto;border:1px solid #888;position:relative;}
+.g7 .wrap {overflow:hidden;}
+.g7 ul {width:1900px;transition:500ms;}
+.g7 li {width:150px;height:150px;overflow:hidden;float:left;margin:0 10px 0 10px;position:relative;border:10px solid #BBB;border-radius:85px;}
+.g7 li img {width:100%;}
+.g7 li span {position:absolute;left:0px;bottom:0px;color:#FFF;background:rgba(0,0,0,0.7);width:100%;height:0%;
+text-align:center;transition:0.5s;}/*display:none;display:block;쓰면 transition:0.3s;이 안먹힘/transition은수치값만 먹힘*/
+								   /*opacity:0;transition:0.5s;opacity:1;첫번째방법*/
+.g7 li:hover span {height:50%;}    /*height:0%;transition:0.5s;height:50%; 두번째방법*/
+.g7 .arrow{background:url("./img/arrow.png");width:30px;height:28px;position:absolute;cursor:pointer;}
+.g7 .prev{left:-30px;top:70px;background-position:0px -85px;}
+.g7 .next{right:-30px;top:70px;background-position:-20px -85px;}
+
