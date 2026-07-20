@@ -43,30 +43,18 @@ $(document).on('mouseenter', '.container .menu > li', function(){
   var $submenu = $(this).find(".submenu");
   var actualHeight = $submenu.find('ul').outerHeight() || $submenu.outerHeight();
 
-  // 1. 배경을 먼저 아래로 펼침
-  $(".container .sub_bg").stop().css({height: actualHeight + 20}).slideDown(300, function() {
-    // 2. 배경 애니메이션이 끝난 후 서브메뉴 글씨가 나타남
-    $submenu.stop().fadeIn(200);
-  });
+  // 1. 글씨를 먼저 즉시 나타나게 하거나 fadeIn으로 먼저 실행
+  $submenu.stop().fadeIn(200);
+
+  // 2. 그 다음 배경이 내려오도록 설정 (약간의 딜레이를 주면 글씨가 먼저 보임)
+  $(".container .sub_bg").stop().css({height: actualHeight + 20}).delay(100).slideDown(300);
 });
 
 $(document).on('mouseleave', '.container .menu > li', function(){
-  var $submenu = $(this).find(".submenu");
-
-  // 나갈 때는 글씨가 먼저 사라지고 배경이 닫힘
-  $submenu.stop().fadeOut(100, function() {
-    $(".container .sub_bg").stop().slideUp(200);
-  });
+  // 나갈 때는 배경이 먼저 올라가고 글씨가 사라지도록 순서 조절
+  $(".container .sub_bg").stop().slideUp(200);
+  $(this).find(".submenu").stop().fadeOut(100);
 });
-$(document).ready(function(){
-  moveProgressBar();
-
-  // 브라우저 리사이즈 시 대응
-  $(window).resize(function() {
-    moveProgressBar();
-  });
-
-
 
 // 프로그레스 바 애니메이션 함수
   function moveProgressBar() {
