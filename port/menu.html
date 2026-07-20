@@ -59,6 +59,9 @@
 	#home.active {top: 0px !important;}
 /* 메뉴가 내려올 때 부드럽게 움직이는 효과 */
 #home {transition: top 0.3s ease;}
+#home.active {
+    top: 0px !important;
+}
 
 #mobile{position:absolute;left:10px;top:10px;margin:80px 20px 0px;}
 #mobile button{width:40px;height:40px;border:3px solid #777;background:#FFF url("./img/btn.png");}
@@ -69,20 +72,6 @@
 /*#m_nav li:hover a{font-weight:bold;} 마우스오버에서 효과없슴*/
 /*#mobile:hover #m_nav{display:block;} 마우스올리면 나오게하기/자바로 마우스벗어나도유지하게하기*/
 </style>
-
-<!-- <script>
-var a=0;
-function up(){
-	if(a==0){
-		document.getElementById('m_nav').style.display='block'
-		a=1;
-		}
-		else{
-		document.getElementById('m_nav').style.display='none'
-		a=0;
-		}
-}
-</script> -->
 
 <!-- mobile menu -->
 				<div id="mobile">
@@ -115,6 +104,7 @@ function up(){
     });
   });
 </script>
+
 					<nav id="gnb_01">
 						<ul class="clearfix">
 							<li><a href="#">HTML</a></li>
