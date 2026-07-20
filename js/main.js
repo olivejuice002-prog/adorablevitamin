@@ -44,31 +44,27 @@ $(function() {
 
 
 
-
 $(document).ready(function(){
-    // 기존의 .hover 코드 대신 body에 이벤트를 위임합니다.
+    // 슬라이드 기능 오류가 발생해도 메뉴 코드는 계속 실행되도록 처리합니다.
+    try {
+        $('.bxslider').bxSlider();
+    } catch (e) {
+        console.log("슬라이드 관련 오류가 발생했으나 메뉴는 정상 작동합니다.");
+    }
 
-    // 마우스를 올렸을 때
-    $('body').on('mouseenter', '.menu > li', function() {
+    // 이벤트 위임 방식을 사용하여 메뉴가 나중에 로딩되어도 동작하게 합니다.
+    $(document).on('mouseenter', '.menu > li', function() {
         $(this).find(".submenu").stop().slideDown(200);
         $(".sub_bg").stop().slideDown(200);
     });
 
-    // 마우스를 내렸을 때
-    $('body').on('mouseleave', '.menu > li', function() {
+    $(document).on('mouseleave', '.menu > li', function() {
         $(this).find(".submenu").stop().slideUp(200);
         $(".sub_bg").stop().slideUp(200);
     });
 });
 
-$(document).ready(function(){
-	  $('.bxslider').bxSlider({
-	  auto: true,
-	  speed: 1000,
-	  pause: 4000,
-	  mode:'horizontal',
-	 });
- });
+
 
 
 $(document).ready(function(){
