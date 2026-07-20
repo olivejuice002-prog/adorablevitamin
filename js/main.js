@@ -17,26 +17,25 @@ $(function() {
 
   // 2. 상단 헤더 메뉴 (영역 이탈 방지 및 순차적 애니메이션)
   // .menu > li가 아니라 .menu 영역 전체에 이벤트를 걸어 안정성을 높입니다.
-  $('.container .menu').on('mouseenter', 'li', function(){
-    var $submenu = $(this).find(".submenu");
+$('.container .menu').on('mouseenter', 'li', function(){
+  var $submenu = $(this).find(".submenu");
+  if($submenu.length === 0) return;
 
-    // 서브메뉴가 없는 li일 경우를 대비
-    if($submenu.length === 0) return;
+  var actualHeight = $submenu.find('ul').outerHeight() || $submenu.outerHeight();
 
-    var actualHeight = $submenu.find('ul').outerHeight() || $submenu.outerHeight();
+  // 1. 글씨를 먼저 0.1초 만에 나타나게 함
+  $submenu.stop().fadeIn(100);
 
-    // 글씨 먼저 표시
-    $submenu.stop().fadeIn(200);
-    // 배경 표시 (글씨보다 살짝 늦게)
-    $(".container .sub_bg").stop().css({height: actualHeight + 20}).delay(100).slideDown(300);
-  });
+  // 2. 배경은 글씨가 보인 직후(100ms)에 슬라이드되도록 함
+  $(".container .sub_bg").stop().css({height: actualHeight + 20}).delay(100).slideDown(300);
+});
 
-  $('.container .menu').on('mouseleave', 'li', function(){
-    // 배경 먼저 닫힘
-    $(".container .sub_bg").stop().slideUp(200);
-    // 글씨 사라짐
-    $(this).find(".submenu").stop().fadeOut(100);
-  });
+$('.container .menu').on('mouseleave', 'li', function(){
+  // 나갈 때는 반대로 배경부터 닫고 글씨를 없앰
+  $(".container .sub_bg").stop().slideUp(200);
+  $(this).find(".submenu").stop().fadeOut(100);
+});
+
 
   // 3. 프로그레스 바 관련
   function moveProgressBar() {
