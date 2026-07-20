@@ -12,7 +12,7 @@
 		<script src="/js/main.js"></script>
 		<script src="/js/uikit.min.js"></script>
 
-				
+
 		<!--[if lt IE 9]>
 			<script src="/js/html5shiv.js"></script>
 		<![endif]-->
@@ -20,19 +20,20 @@
 	</head>
 
 	<body>
-		<?
+		<!-- <?
 			include("../include/header.html");
 		?>
 
 		<?
 			include("../include/subHead.html");
-		?>
-
+		?> -->
+		<div id="header-html"></div>
+		<div id="subHead-html"></div>
 		<section id="sub">
 			<div class="contact">
 				<div class="wrap">
 					<h1>문의<span>메일로 남겨주시면 <br class="br_block"> 최대한 빠르게 답변드리겠습니다.</span></h1>
-					
+
 					<form name="fwrite" id="fwrite" action="/bbs/write_update.php" onsubmit="return fwrite_submit(this);" method="post" enctype="multipart/form-data">
 						<table>
 							<tr>
@@ -58,15 +59,15 @@
 							<tr>
 								 <td>
 								<textarea class="uk-textarea" name="wr_content" id="wr_content" rows="5" placeholder="문의내용을 입력해주세요."></textarea>
-								 
+
 								 </td>
 							</tr>
 						</table>
-								
-						<button type="submit" name="send" value="send">전송하기</button>	 
+
+						<button type="submit" name="send" value="send">전송하기</button>
 					</form>
 				</div>
-		</div><!-- contact-->	
+		</div><!-- contact-->
 		</section>
 <script type="text/javascript">
   	function fwrite_submit(){
@@ -80,9 +81,11 @@
       }
     }
 </script>
-		<?
+		<!-- <?
 			include("../include/footer.html");
-		?>
+		?> -->
+		<div id="footer-html"></div>
+		<script src="../js/include.js"></script>
 
 	</body>
 
