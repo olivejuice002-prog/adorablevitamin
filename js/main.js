@@ -40,27 +40,22 @@ $(function() {
 
 //2. 상단 헤더 메뉴 애니메이션 (이벤트 위임 방식으로 완전 교체)
 $(document).on('mouseenter', '.container .menu > li', function(){
-  // 마우스를 올린 li 안의 서브메뉴와전체 배경을 슬라이드 다운
-  $(this).find(".submenu").stop().slideDown(300);
-  $(".container .sub_bg").stop().slideDown(300);
+  var $submenu = $(this).find(".submenu");
+  var itemCount = $submenu.find("li").length; // 서브메뉴 개수 자동 카운트
+
+  // 항목당 높이(padding 포함)를 대략 40px로 계산 (직접 수정 가능)
+  var targetHeight = (itemCount * 40) + 20;
+
+  // 서브메뉴 보여주기
+  $submenu.stop().slideDown(300);
+
+  // 배경 높이를 계산값으로 변경하고 보여주기
+  $(".container .sub_bg").stop().css({height: targetHeight}).slideDown(300);
 });
 
 $(document).on('mouseleave', '.container .menu > li', function(){
-  // 마우스가 나가면 슬라이드 업
   $(this).find(".submenu").stop().slideUp(200);
   $(".container .sub_bg").stop().slideUp(200);
-});
-/* ==========================================================================
-   3. 슬라이더 & 프로그레스 바 (기존 기능 유지)
-   ========================================================================== */
-$(document).ready(function(){
-  // bxSlider 실행
-  $('.bxslider').bxSlider({
-    auto: true,
-    speed: 1000,
-    pause: 4000,
-    mode:'horizontal',
-  });
 });
 
 $(document).ready(function(){
