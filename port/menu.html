@@ -23,7 +23,7 @@
 	#home .banner{background:#222;color:#FFF;font-size:20px;letter-spacing:3px;text-align:center;line-height:50px;border-bottom:2px solid #000;}
 	#home .h{background:#222;width:100px;text-align:center;margin:0 auto;line-height:20px;border-radius:0px 0px 10px 10px;}
 	#home .h a{color:#FFF;display:block;}
-		
+
 	.wrapper {min-width:800px;margin:0 auto;background:#dae0e6;}
 	header h1 {width:150px;margin:0 auto;float:left;}
 	header h1 a{display:block;font-size:30px;line-height:60px;text-align:center;transition:0.5s;letter-spacing:-1px;}
@@ -65,7 +65,7 @@
 /*#mobile:hover #m_nav{display:block;} 마우스올리면 나오게하기/자바로 마우스벗어나도유지하게하기*/
 </style>
 
-<script>
+<!-- <script>
 var a=0;
 function up(){
 	if(a==0){
@@ -77,10 +77,10 @@ function up(){
 		a=0;
 		}
 }
-</script>
+</script> -->
 
 <!-- mobile menu -->
-				<div id="mobile" onClick="up()">
+				<div id="mobile">
 					<button></button>
 					<nav id="m_nav">
 						<ul>
@@ -93,6 +93,7 @@ function up(){
 					</nav>
 				</div>
 
+
 <style>
 #gnb_01 {border-top:1px solid #777;border-bottom:1px solid #777;margin:0 0 40px;}
 #gnb_01 ul {width:600px;margin:0 auto;}
@@ -101,6 +102,16 @@ function up(){
 #gnb_01 li a{display:block;border-right:1px solid #777;line-height:35px;transition:0.5s;}/*수정하기 편하게 하기위해li말고 안에a에 선을준다*/
 #gnb_01 li:hover a{background:#888;color:#FFF;}
 </style>
+<script>
+  $(document).ready(function() {
+    // 문서 전체에서 #mobile 상자를 감시하다가 마우스가 올라오거나 벗어날 때 실행합니다.
+    $(document).on('mouseenter', '#mobile', function() {
+      $('#m_nav').show(); // 마우스 올리면 보이기 (display: block)
+    }).on('mouseleave', '#mobile', function() {
+      $('#m_nav').hide(); // 마우스 나가면 숨기기 (display: none)
+    });
+  });
+</script>
 					<nav id="gnb_01">
 						<ul class="clearfix">
 							<li><a href="#">HTML</a></li>
@@ -152,13 +163,13 @@ $(function(){
 		/*$(this).find('.sub li').css({'background':'#0F0'});*/
 		/*var aa= $(this).find('.sub li').height();
 		alert(aa);*/
-		
+
 		var sH= $(this).find('.sub li').height();
 		var sC= $(this).find('.sub li').length;
 		$(this).find('.sub').stop(true).animate({'height':sH*sC+10});
 	})
 	.on('mouseout',function(){
-		$(this).find('.sub').stop(true).animate({'height':''});	
+		$(this).find('.sub').stop(true).animate({'height':''});
 	});
 });
 </script>
@@ -172,7 +183,7 @@ $(function(){
 									<li><a href="#">HTML3</a></li>
 									<li><a href="#">HTML4</a></li>
 								</ul>
-							
+
 							</li>
 							<li><a href="#">CSS<span></span></a>
 								<ul class="sub">
@@ -201,7 +212,7 @@ $(function(){
 							</li>
 						</ul>
 					</nav>
-			</header>			
+			</header>
 
 <style>
 h2 {display:none;}/*페이지 대표는 h2 기계가 읽어주기위해서..안보여주기위해서 */
@@ -227,7 +238,7 @@ section nav{float:left;margin:0 10px;}
 							<li><a href="#">DOM</a></li>
 						</ul>
 				</nav>
-				
+
 <style>
 
 #nav_02 {width:200px;}
@@ -272,7 +283,7 @@ section nav{float:left;margin:0 10px;}
 
 </style>
 
-	<!-- 메뉴 background형식으로 제작함  -->	
+	<!-- 메뉴 background형식으로 제작함  -->
 				<nav id="nav_03">
 					<h3>Image Clipping</h3>
 						<ul>
