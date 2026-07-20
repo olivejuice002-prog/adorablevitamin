@@ -55,11 +55,12 @@
 				</div>
 
 <style>
-/* 처음에는 서브메뉴와 서브 배경을 숨겨둡니다 */
-.submenu, .sub_bg {  display: none;}
+/* 1. 평소에는 메뉴와 배경을 숨겨둡니다 */
+.submenu, .sub_bg { display: none !important;}
 
-/* active 클래스가 붙으면 마우스를 떼도 계속 보이게 고정합니다 */
-.submenu.active, .sub_bg.active {display: block !important}
+/* 2. 실제 상단 메뉴 영역(nav)에 마우스가 올라가는 순간, 무조건 보이게 만듭니다 */
+nav:hover .submenu,
+nav:hover .sub_bg { display: block !important;}
 
 
 #mobile{position:absolute;left:10px;top:10px;margin:80px 20px 0px;}
@@ -95,6 +96,7 @@
 #gnb_01 li a{display:block;border-right:1px solid #777;line-height:35px;transition:0.5s;}/*수정하기 편하게 하기위해li말고 안에a에 선을준다*/
 #gnb_01 li:hover a{background:#888;color:#FFF;}
 </style>
+그래
 <script>
   $(document).ready(function() {
     // 실제 메뉴를 감싸고 있는 nav 태그에 마우스가 들어오는 순간 실행
