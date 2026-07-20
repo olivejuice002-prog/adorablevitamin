@@ -55,6 +55,11 @@
 				</div>
 
 <style>
+/* 마우스가 한 번 올라갔을 때 고정될 스타일 */
+	#home.active {top: 0px !important;}
+/* 메뉴가 내려올 때 부드럽게 움직이는 효과 */
+#home {transition: top 0.3s ease;}
+
 #mobile{position:absolute;left:10px;top:10px;margin:80px 20px 0px;}
 #mobile button{width:40px;height:40px;border:3px solid #777;background:#FFF url("./img/btn.png");}
 #m_nav{background:#777;;width:200px;margin-top:-3px;display:none;}
