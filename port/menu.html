@@ -55,13 +55,12 @@
 				</div>
 
 <style>
-/* 마우스가 한 번 올라갔을 때 고정될 스타일 */
-	#home.active {top: 0px !important;}
-/* 메뉴가 내려올 때 부드럽게 움직이는 효과 */
-#home {transition: top 0.3s ease;}
-#home.active {
-    top: 0px !important;
-}
+/* 처음에는 서브메뉴와 서브 배경을 숨겨둡니다 */
+.submenu, .sub_bg {  display: none;}
+
+/* active 클래스가 붙으면 마우스를 떼도 계속 보이게 고정합니다 */
+.submenu.active, .sub_bg.active {display: block !important}
+
 
 #mobile{position:absolute;left:10px;top:10px;margin:80px 20px 0px;}
 #mobile button{width:40px;height:40px;border:3px solid #777;background:#FFF url("./img/btn.png");}
@@ -98,9 +97,10 @@
 </style>
 <script>
   $(document).ready(function() {
-    // 마우스가 들어올 때만 감시하고, 나갈 때 감시하는 코드는 넣지 않습니다.
-    $(document).on('mouseenter', '.h', function() {
-      $('#home').addClass('active');
+    // 실제 메뉴를 감싸고 있는 nav 태그에 마우스가 들어오는 순간 실행
+    $(document).on('mouseenter', 'nav', function() {
+      $('.submenu').addClass('active'); // 서브메뉴 목록 보이기 고정
+      $('.sub_bg').addClass('active');  // 서브메뉴 배경판 보이기 고정
     });
   });
 </script>
