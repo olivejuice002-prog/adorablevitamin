@@ -1,14 +1,14 @@
-	
+
 
 /*modal*/
 $(function() {
 	$('#sub .list .cont .thumb').on('click',function() {
 		$('.modal').css({'display':'block'});
 		$('.modal .bg').css({'background':'#000','opacity':'0.9'});
-		
+
 		var img = $(this).find('img').attr('src');
 		$('.modal').find('img').attr('src',img);
-				
+
 		var w = $('.modal img').outerWidth() / 2;
 		var h = $('.modal img').outerHeight() / 2;
 
@@ -20,17 +20,17 @@ $(function() {
 	});
 });
 
-	
+
 
 /*modal*/
 $(function() {
 	$('#sub .list .thumb2').on('click',function() {
 		$('.modal').css({'display':'block'});
 		$('.modal .bg').css({'background':'#000','opacity':'0.9'});
-		
+
 		var img = $(this).find('img').attr('src');
 		$('.modal').find('img').attr('src',img);
-				
+
 		var w = $('.modal img').outerWidth() / 2;
 		var h = $('.modal img').outerHeight() / 2;
 
@@ -46,26 +46,22 @@ $(function() {
 
 
 $(document).ready(function(){
+    // 기존의 .hover 코드 대신 body에 이벤트를 위임합니다.
 
-	var menu = $(".menu");
+    // 마우스를 올렸을 때
+    $('body').on('mouseenter', '.menu > li', function() {
+        $(this).find(".submenu").stop().slideDown(200);
+        $(".sub_bg").stop().slideDown(200);
+    });
 
-	$(".submenu").hide();
-	$(".sub_bg").hide();
-
-	menu.hover(function(){
-	  $(this).find(".submenu").stop().slideDown();
-	  $(".sub_bg").stop().slideDown();
-	},function(){
-
-	  $(this).find(".submenu").stop().slideUp();
-	  $(".sub_bg").stop().slideUp();
-	});
-	
+    // 마우스를 내렸을 때
+    $('body').on('mouseleave', '.menu > li', function() {
+        $(this).find(".submenu").stop().slideUp(200);
+        $(".sub_bg").stop().slideUp(200);
+    });
 });
 
-
-
-$(document).ready(function(){ 
+$(document).ready(function(){
 	  $('.bxslider').bxSlider({
 	  auto: true,
 	  speed: 1000,
@@ -75,8 +71,8 @@ $(document).ready(function(){
  });
 
 
-$(document).ready(function(){ 
-	
+$(document).ready(function(){
+
 	   moveProgressBar();
     // on browser resize...
     $(window).resize(function() {
@@ -90,7 +86,7 @@ $(document).ready(function(){
         var getProgressWrapWidth = $('.progress-wrap').width();
         var progressTotal = getPercent * getProgressWrapWidth;
         var animationLength = 2000;
-        
+
         // on page load, animate percentage bar to data percentage length
         // .stop() used to prevent animation queueing
         $('.progress-bar').stop().animate({
@@ -104,6 +100,6 @@ $(document).ready(function(){
 
 
 
- 
+
 
 
