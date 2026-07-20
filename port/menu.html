@@ -71,6 +71,24 @@ nav:hover .sub_bg { display: block !important;}
 #m_nav li a{display:block;color:#FFF;padding:5px 10px;}
 /*#m_nav li:hover a{font-weight:bold;} 마우스오버에서 효과없슴*/
 /*#mobile:hover #m_nav{display:block;} 마우스올리면 나오게하기/자바로 마우스벗어나도유지하게하기*/
+
+/* ==========================================================
+   PC용 메뉴 부드러운 효과 설정
+   ========================================================== */
+.submenu, .sub_bg {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transform: translateY(-10px) !important;
+    /* 0.4초 동안 스르륵 움직이는 고퀄리티 애니메이션 */
+    transition: all 0.4s ease-in-out !important;
+}
+
+/* 제이쿼리가 active 클래스를 붙여주면 마우스를 떼도 그대로 유지됨 */
+.submenu.active, .sub_bg.active {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) !important;
+}
 </style>
 
 <!-- mobile menu -->
@@ -96,16 +114,6 @@ nav:hover .sub_bg { display: block !important;}
 #gnb_01 li a{display:block;border-right:1px solid #777;line-height:35px;transition:0.5s;}/*수정하기 편하게 하기위해li말고 안에a에 선을준다*/
 #gnb_01 li:hover a{background:#888;color:#FFF;}
 </style>
-그래
-<script>
-  $(document).ready(function() {
-    // 실제 메뉴를 감싸고 있는 nav 태그에 마우스가 들어오는 순간 실행
-    $(document).on('mouseenter', 'nav', function() {
-      $('.submenu').addClass('active'); // 서브메뉴 목록 보이기 고정
-      $('.sub_bg').addClass('active');  // 서브메뉴 배경판 보이기 고정
-    });
-  });
-</script>
 
 					<nav id="gnb_01">
 						<ul class="clearfix">
@@ -152,7 +160,7 @@ nav:hover .sub_bg { display: block !important;}
 /*#gnb_03 li .sub {height:105px;}*/
 </style>
 
-<script>
+<!-- <script>
 $(function(){
 	$('#gnb_03 li').on('mouseover',function(){
 		/*$(this).find('.sub li').css({'background':'#0F0'});*/
@@ -167,6 +175,21 @@ $(function(){
 		$(this).find('.sub').stop(true).animate({'height':''});
 	});
 });
+</script> -->
+
+<script>
+  $(document).ready(function() {
+    // 1. PC용: 네비게이션(nav)에 마우스가 올라가면 서브메뉴 고정유지
+    $(document).on('mouseenter', 'nav', function() {
+      $('.submenu').addClass('active');
+      $('.sub_bg').addClass('active');
+    });
+
+    // 2. 모바일용: 모바일 전체상자(#mobile)에 마우스가 올라가면 모바일메뉴 고정유지
+    $(document).on('mouseenter', '#mobile', function() {
+      $('#m_nav').addClass('active');
+    });
+  });
 </script>
 
 					<nav id="gnb_03">
