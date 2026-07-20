@@ -41,23 +41,23 @@ $(function() {
 //2. 상단 헤더 메뉴 애니메이션 (이벤트 위임 방식으로 완전 교체)
 $(document).on('mouseenter', '.container .menu > li', function(){
   var $submenu = $(this).find(".submenu");
-  var itemCount = $submenu.find("li").length; // 서브메뉴 개수 자동 카운트
+  var actualHeight = $submenu.find('ul').outerHeight() || $submenu.outerHeight();
 
-  // 항목당 높이(padding 포함)를 대략 40px로 계산 (직접 수정 가능)
-  var targetHeight = (itemCount * 40) + 20;
-
-  // 서브메뉴 보여주기
-  $submenu.stop().slideDown(300);
-
-  // 배경 높이를 계산값으로 변경하고 보여주기
-  $(".container .sub_bg").stop().css({height: targetHeight}).slideDown(300);
+  // 1. 배경을 먼저 아래로 펼침
+  $(".container .sub_bg").stop().css({height: actualHeight + 20}).slideDown(300, function() {
+    // 2. 배경 애니메이션이 끝난 후 서브메뉴 글씨가 나타남
+    $submenu.stop().fadeIn(200);
+  });
 });
 
 $(document).on('mouseleave', '.container .menu > li', function(){
-  $(this).find(".submenu").stop().slideUp(200);
-  $(".container .sub_bg").stop().slideUp(200);
-});
+  var $submenu = $(this).find(".submenu");
 
+  // 나갈 때는 글씨가 먼저 사라지고 배경이 닫힘
+  $submenu.stop().fadeOut(100, function() {
+    $(".container .sub_bg").stop().slideUp(200);
+  });
+});
 $(document).ready(function(){
   moveProgressBar();
 
