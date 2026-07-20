@@ -38,20 +38,30 @@ font-family: 'Noto Sans KR',
 .container .menu > li{position: relative; width:25%;float:left;}
 .container .menu > li > a{color: #333; padding: 0 20px;font-weight: 500;text-align: center; display: block; font-family: 'Poppins', sans-serif !important;font-size:18px;line-height: 100px;font-weight: 600;}
 .container .menu > li > a:hover{text-decoration:none;}
-.container .submenu{display:none; display: none;
+/* 서브메뉴 글씨 영역 */
+.container .submenu {
+    display: none;
     position: absolute;
     top: 100px;
     left: 0;
-    width: 100%; /* 부모 li(25%) 안에서 100%를 쓰게 함 */
-    padding-top: 15px;
-    text-align: center; /* 글씨를 가운데로 */
-    z-index: 999;}
-.container .submenu li {
-    float: none; /* float 해제 (중요) */
     width: 100%;
+    text-align: center;
+    z-index: 1000; /* 배경(998)보다 높게 설정 */
+    padding-top: 15px;
 }
 .container .submenu li a{display: block; font-size: 15px;color: #333;text-align: center;font-weight: 500;padding: 7px 20px;}
-.container .sub_bg{display: none; width: 100vw; /*height: 277px;*/ background: rgba(255,255,255,0.9);position: absolute; top: 100px; z-index: -1; left: 0; border-top: 1px solid #e4e4e4;overflow: hidden;}
+/* 배경 영역 */
+.container .sub_bg {
+    display: none;
+    position: absolute;
+    top: 100px;
+    left: 0;
+    width: 100%;
+    background: rgba(255,255,255,0.9);
+    z-index: 998; /* 글씨보다 낮게 설정 */
+    border-top: 1px solid #e4e4e4;
+    overflow: hidden;
+}
 .container .submenu li a:hover{text-decoration:none;color:#1a6498}
 .header_mb{display:none;}
 .uk-offcanvas {background:none;}
