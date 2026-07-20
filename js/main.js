@@ -39,23 +39,16 @@ $(function() {
 
 
 //2. 상단 헤더 메뉴 애니메이션 (이벤트 위임 방식으로 완전 교체)
-$(document).ready(function(){
-  // [수정] include 폴더 안의 header.html을 늦게 불러와도 귀신같이 인식하도록 처리했습니다.
-  $(document).on('mouseover', '#gnb_03 li', function(){
-    var $sub = $(this).find('.sub_menu');
+$(document).on('mouseenter', '.container .menu > li', function(){
+  // 마우스를 올린 li 안의 서브메뉴와전체 배경을 슬라이드 다운
+  $(this).find(".submenu").stop().slideDown(300);
+  $(".container .sub_bg").stop().slideDown(300);
+});
 
-    // 서브메뉴 내부 li의 높이와 개수를 실시간으로 계산
-    var sH = $sub.find('li').height();
-    var sC = $sub.find('li').length;
-
-    // 계산된 높이만큼 스르륵 열기
-    $sub.stop(true).animate({'height': (sH * sC) + 10});
-  });
-
-  $(document).on('mouseout', '#gnb_03 li', function(){
-    // 마우스가 나가면 다시 높이를 0으로 부드럽게 닫기
-    $(this).find('.sub_menu').stop(true).animate({'height': '0px'});
-  });
+$(document).on('mouseleave', '.container .menu > li', function(){
+  // 마우스가 나가면 슬라이드 업
+  $(this).find(".submenu").stop().slideUp(200);
+  $(".container .sub_bg").stop().slideUp(200);
 });
 /* ==========================================================================
    3. 슬라이더 & 프로그레스 바 (기존 기능 유지)
