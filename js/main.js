@@ -11,17 +11,28 @@ function initMenu() {
 
         function () {
 
-            $(this).children(".submenu").stop(true, true).slideDown(200);
+            let h = $(this).children(".submenu").outerHeight();
 
-            $(".sub_bg").stop(true, true).slideDown(200);
+            $(this).children(".submenu")
+                .stop(true, true)
+                .slideDown(200);
+
+            $(".sub_bg")
+                .height(h + 15)
+                .stop(true, true)
+                .slideDown(200);
 
         },
 
         function () {
 
-            $(this).children(".submenu").stop(true, true).slideUp(200);
+            $(this).children(".submenu")
+                .stop(true, true)
+                .slideUp(200);
 
-            $(".sub_bg").stop(true, true).slideUp(200);
+            $(".sub_bg")
+                .stop(true, true)
+                .slideUp(200);
 
         }
 
