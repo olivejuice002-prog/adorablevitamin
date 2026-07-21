@@ -13,7 +13,7 @@ function initMenu() {
 
             let count = $(this).find(".submenu > li").length;
 
-            let height = (count * 37) + 15;
+            let height = (count * 37) + 30;
 
             $(this).children(".submenu")
                 .stop(true,true)
