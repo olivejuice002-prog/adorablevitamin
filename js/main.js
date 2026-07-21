@@ -14,12 +14,12 @@ function initMenu() {
             let h = $(this).children(".submenu").outerHeight();
 
             $(this).children(".submenu")
-                .stop(true, true)
+                .stop(true,true)
                 .slideDown(200);
 
             $(".sub_bg")
-                .height(h + 15)
-                .stop(true, true)
+                .stop(true,true)
+                .height(h)
                 .slideDown(200);
 
         },
@@ -27,11 +27,11 @@ function initMenu() {
         function () {
 
             $(this).children(".submenu")
-                .stop(true, true)
+                .stop(true,true)
                 .slideUp(200);
 
             $(".sub_bg")
-                .stop(true, true)
+                .stop(true,true)
                 .slideUp(200);
 
         }
