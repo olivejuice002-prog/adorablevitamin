@@ -4,25 +4,24 @@
 
 function initMenu() {
 
-    var menu = $(".menu");
-
     $(".submenu").hide();
     $(".sub_bg").hide();
 
-    menu.hover(function () {
+    $(document)
+        .off("mouseenter", ".menu > li")
+        .on("mouseenter", ".menu > li", function () {
+            $(this).children(".submenu").stop(true, true).slideDown(200);
+            $(".sub_bg").stop(true, true).slideDown(200);
+        });
 
-        $(this).find(".submenu").stop().slideDown(200);
-        $(".sub_bg").stop().slideDown(200);
-
-    }, function () {
-
-        $(this).find(".submenu").stop().slideUp(200);
-        $(".sub_bg").stop().slideUp(200);
-
-    });
+    $(document)
+        .off("mouseleave", ".menu > li")
+        .on("mouseleave", ".menu > li", function () {
+            $(this).children(".submenu").stop(true, true).slideUp(200);
+            $(".sub_bg").stop(true, true).slideUp(200);
+        });
 
 }
-
 
 /* ==========================
    MODAL
