@@ -11,7 +11,9 @@ function initMenu() {
 
         function () {
 
-            let h = $(this).children(".submenu").outerHeight();
+            let count = $(this).find(".submenu > li").length;
+
+            let height = (count * 37) + 15;
 
             $(this).children(".submenu")
                 .stop(true,true)
@@ -19,7 +21,7 @@ function initMenu() {
 
             $(".sub_bg")
                 .stop(true,true)
-                .height(h)
+                .height(height)
                 .slideDown(200);
 
         },
@@ -39,7 +41,6 @@ function initMenu() {
     );
 
 }
-
 /* ==========================
    MODAL
 ========================== */
