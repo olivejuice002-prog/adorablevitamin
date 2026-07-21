@@ -124,6 +124,8 @@ function initProgress() {
 
 $(function () {
 
+    initMenu();
+
     initSlider();
 
     initModal();
