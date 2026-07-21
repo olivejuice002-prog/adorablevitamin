@@ -7,19 +7,25 @@ function initMenu() {
     $(".submenu").hide();
     $(".sub_bg").hide();
 
-    $(document)
-        .off("mouseenter", ".menu > li")
-        .on("mouseenter", ".menu > li", function () {
-            $(this).children(".submenu").stop(true, true).slideDown(200);
-            $(".sub_bg").stop(true, true).slideDown(200);
-        });
+    $(".menu > li").hover(
 
-    $(document)
-        .off("mouseleave", ".menu > li")
-        .on("mouseleave", ".menu > li", function () {
+        function () {
+
+            $(this).children(".submenu").stop(true, true).slideDown(200);
+
+            $(".sub_bg").stop(true, true).slideDown(200);
+
+        },
+
+        function () {
+
             $(this).children(".submenu").stop(true, true).slideUp(200);
+
             $(".sub_bg").stop(true, true).slideUp(200);
-        });
+
+        }
+
+    );
 
 }
 
