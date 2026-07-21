@@ -45,24 +45,26 @@ $(function() {
 
 
 
-$(document).ready(function(){
+function initMenu() {
 
-	var menu = $(".menu");
+    var menu = $(".menu");
 
-	$(".submenu").hide();
-	$(".sub_bg").hide();
+    $(".submenu").hide();
+    $(".sub_bg").hide();
 
-	menu.hover(function(){
-	  $(this).find(".submenu").stop().slideDown();
-	  $(".sub_bg").stop().slideDown();
-	},function(){
+    menu.hover(function () {
 
-	  $(this).find(".submenu").stop().slideUp();
-	  $(".sub_bg").stop().slideUp();
-	});
+        $(this).find(".submenu").stop().slideDown();
+        $(".sub_bg").stop().slideDown();
 
-});
+    }, function () {
 
+        $(this).find(".submenu").stop().slideUp();
+        $(".sub_bg").stop().slideUp();
+
+    });
+
+}
 
 
 $(document).ready(function(){
